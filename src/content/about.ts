@@ -17,7 +17,7 @@ export const story = {
   label: "Our story",
   heading: "Forty shirts and a borrowed press",
   lead:
-    "Try Jesus began in 2019 in the back of a print shop on Murphy Avenue, with a borrowed carousel press, one screen, and forty blank shirts bought on a card that should not have been used for it.",
+    "Try Jesus began in 2026 in the back of a print shop on Murphy Avenue, with a borrowed carousel press, one screen, and forty blank shirts bought on a card that should not have been used for it.",
   body: [
     "The first run was for a small group who kept being asked the same question and were tired of giving the long answer. Two words on a heavy shirt did the job better than any of us managed out loud. They wore them until they went soft, and then people started asking where to get one.",
     "We could have turned that into a drop calendar. We deliberately did not. There are six pieces, they do not change with the season, and when one wears out the same one is still there to replace it. A brand that makes you check for restocks is a brand that has decided scarcity is the product.",

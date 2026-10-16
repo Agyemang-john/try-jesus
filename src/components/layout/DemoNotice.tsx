@@ -15,11 +15,11 @@ export function DemoNotice() {
     <div className="border-b border-paper/15 bg-ink text-paper">
       <Container width="wide" className="flex h-8 items-center justify-center">
         <p className="label text-center text-[0.625rem] text-paper/70">
-          <span className="text-paper">Demo build</span>
+          <span className="text-paper">Explorer</span>
           <span aria-hidden="true" className="mx-2 opacity-40">
             /
           </span>
-          Placeholder copy, photography and figures
+          photography and figures
         </p>
       </Container>
     </div>
