@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   HALDEN — design tokens
+
+   The system is monochrome and deliberately heavy. Solidity comes from three
+   things, not from colour: one family carrying real weight, filled shapes
+   instead of hairlines, and body copy dark enough to read as ink rather than
+   as a suggestion.
+   ========================================================================== */
+
+@theme {
+  /* -- Palette ------------------------------------------------------------
+     Values are cooler and higher-contrast than a warm editorial palette. The
+     mid greys in particular are dark: light grey small text is the fastest
+     way to make a page feel insubstantial. */
+  --color-paper: #ffffff;
+  --color-bone: #f4f4f2;
+  --color-bone-deep: #e7e7e4;
+  --color-ink: #0d0d0d;
+  --color-charcoal: #1f1f1f;
+  --color-graphite: #4a4a48;
+  --color-ash: #9b9b98;
+  --color-line: #d8d8d4;
+  --color-line-ink: #303030;
+
+  /* Functional only — errors and the required-field marker. The brand itself
+     is black and white. Change this one value to introduce a brand colour. */
+  --color-accent: #b42318;
+
+  /* -- Semantic aliases ---------------------------------------------------- */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink);
+  --color-muted: var(--color-graphite);
+  --color-border: var(--color-line);
+
+  /* -- Type ---------------------------------------------------------------
+     One family at many weights, which is what makes a site read as a single
+     designed product rather than a pairing exercise. `--font-display` is kept
+     as a separate token so a display face can be swapped in later without
+     touching every heading. */
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Fluid display scale. Tighter ceilings than an editorial scale: headlines
+     should fill their measure confidently, not tower over the content. */
+  --text-display-xl: clamp(2.5rem, 1.1rem + 5.4vw, 6rem);
+  --text-display-lg: clamp(2rem, 1.1rem + 3.4vw, 4rem);
+  --text-display-md: clamp(1.75rem, 1.15rem + 2.3vw, 2.75rem);
+  --text-display-sm: clamp(1.375rem, 1.05rem + 1.3vw, 1.875rem);
+
+  /* -- Geometry -----------------------------------------------------------
+     Buttons, chips and inputs are pills; everything structural — images,
+     panels, bands — stays square. Set --radius-pill to 0 to return the whole
+     interface to hard corners. */
+  --radius-pill: 9999px;
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+
+  /* -- Motion -------------------------------------------------------------- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-editorial: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --header-height: 4.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --header-height: 5rem;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  /* One focus treatment everywhere. Square even on pill controls, because a
+     hard ring is easier to see than one that hugs a rounded edge. */
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  .on-ink :focus-visible,
+  .on-ink :focus-visible * {
+    outline-color: var(--color-paper);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+@layer components {
+  /* Headings carry their weight here rather than at every call site, so a
+     heading is bold whether or not it also uses a display size. */
+  .font-display {
+    font-weight: 700;
+    letter-spacing: -0.021em;
+  }
+
+  /* Small uppercase label. Heavier and less letterspaced than an editorial
+     eyebrow — at 500 weight and 0.18em it reads as decoration, at 600 and
+     0.1em it reads as a label. */
+  .label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Link underline that draws in from the left on hover. */
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.15em;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--ease-out-expo);
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .link-underline-active::after {
+    transform: scaleX(1);
+  }
+
+  /* Same rule, driven by an ancestor rather than the label itself — so a card
+     underlines its "View product" when the whole card is hovered or its link
+     takes keyboard focus. */
+  .link-underline-group {
+    position: relative;
+    display: inline-block;
+  }
+
+  .link-underline-group::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.15em;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--ease-out-expo);
+  }
+
+  [data-underline-group]:hover .link-underline-group::after,
+  [data-underline-group]:focus-within .link-underline-group::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .fade-in {
+    animation: fade-in 0.28s var(--ease-editorial) both;
+  }
+}
+
+@layer utilities {
+  /* The hero headline is the one place set lighter than the rest. At this size
+     a 700 weight becomes a wall; 400 reads as confidence. Everything smaller
+     is bold. */
+  .text-display-xl {
+    font-size: var(--text-display-xl);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  .text-display-lg {
+    font-size: var(--text-display-lg);
+    line-height: 1.06;
+    font-weight: 700;
+    letter-spacing: -0.024em;
+  }
+
+  .text-display-md {
+    font-size: var(--text-display-md);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.021em;
+  }
+
+  .text-display-sm {
+    font-size: var(--text-display-sm);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.017em;
+  }
+
+  /* Body copy, one step up from the browser default and dark enough to hold
+     the page down. */
+  .text-body {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Anyone who has asked their OS to calm things down gets a static site. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
