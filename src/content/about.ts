@@ -15,13 +15,13 @@ import type { BrandValue, Founder, Statistic, TimelineEntry } from "./types";
 
 export const story = {
   label: "Our story",
-  heading: "Forty shirts and a borrowed press",
+  heading: "Clothing that carries a message",
   lead:
-    "Try Jesus began in 2026 in the back of a print shop on Murphy Avenue, with a borrowed carousel press, one screen, and forty blank shirts bought on a card that should not have been used for it.",
+    "We drop limited ready-to-wear collections and take custom design requests for anyone who wants something personal. Based in Ghana, shipping faith-forward style worldwide.",
   body: [
-    "The first run was for a small group who kept being asked the same question and were tired of giving the long answer. Two words on a heavy shirt did the job better than any of us managed out loud. They wore them until they went soft, and then people started asking where to get one.",
-    "We could have turned that into a drop calendar. We deliberately did not. There are six pieces, they do not change with the season, and when one wears out the same one is still there to replace it. A brand that makes you check for restocks is a brand that has decided scarcity is the product.",
-    "Everything is still printed on our own press in Atlanta, by people whose names are on the wall. The ink is water-based, which is slower and more expensive and means the print goes soft with the shirt rather than peeling off it in the third year.",
+    "Try Jesus started with a simple belief: a shirt can say what is sometimes hard to say out loud. Two words, worn plainly, can open a conversation that a sermon never would.",
+    "Every collection is released in limited runs, so each piece stays considered rather than mass-produced. Between drops, we work one-on-one with people who want a design of their own — a verse, a testimony, a name for their church or ministry.",
+    "Each garment is made to be worn often and worn well, because a message only travels as far as the clothing that carries it.",
   ],
 };
 
@@ -29,97 +29,52 @@ export const mission = {
   label: "Mission",
   heading: "Voice of the ONE",
   body:
-    "To make garments good enough that the message outlasts the novelty — heavy cotton, honest printing, and a range short enough that we can stand behind every piece in it. If a shirt falls apart in a year, nothing written on it mattered much.",
+    "To carry a message of faith and renewal through what people wear — clothing that starts conversations, inspires hope, and reminds everyone who sees it to try faith first.",
 };
 
 export const vision = {
   label: "Vision",
-  heading: "A shop, not a drop",
+  heading: "Faith-forward, worldwide",
   body:
-    "We want Try Jesus to be the place you come back to when the old one wears out, not the place you set an alarm for. That means keeping the range short, keeping the pieces in stock, printing in-house so we control the quality, and never making scarcity do the work that the garment should be doing.",
+    "From Ghana to the rest of the world, we want Try Jesus to be a familiar sign of hope — worn in streets, schools, churches and workplaces, starting conversations wherever it goes.",
 };
 
-export const timeline: TimelineEntry[] = [
-  {
-    year: "2019",
-    title: "Forty shirts, one screen",
-    description:
-      "The first run is printed on a borrowed press in the back of a shop on Murphy Avenue, for a group of friends who kept getting asked the same question.",
-  },
-  {
-    year: "2020",
-    title: "The Heavyweight Tee",
-    description:
-      "The first shirt made on our own blanks rather than bought ones: 8.5oz cotton, boxy, pre-shrunk. The pattern has not changed since.",
-    image: {
-      src: "/images/brand/story-01.jpg",
-      alt: "Photograph of the first Try Jesus shirt on the press",
-      width: 1600,
-      height: 2000,
-    },
-  },
-  {
-    year: "2021",
-    title: "Our own press",
-    description:
-      "We stop renting press time and buy a six-colour carousel. Everything from here is printed by us, which is the point at which we can promise anything about quality.",
-  },
-  {
-    year: "2023",
-    title: "The hood gets a second layer",
-    description:
-      "Enough people tell us the single-layer hood lies flat that we remake the whole garment. It becomes the best-selling thing we make.",
-    image: {
-      src: "/images/brand/story-02.jpg",
-      alt: "Photograph of the print room bench",
-      width: 1400,
-      height: 1050,
-    },
-  },
-  {
-    year: "2025",
-    title: "Six pieces, held",
-    description:
-      "We stop adding and start holding. The range settles at six, restocked rather than replaced, with no seasonal calendar.",
-  },
-  {
-    year: "2026",
-    title: "The print apprenticeship",
-    description:
-      "Two people begin a paid year on the press. The intention is for this to become the normal way into the shop.",
-  },
-];
+/**
+ * Company history. Left empty until the client supplies real dates and
+ * milestones — the section hides itself when this array is empty.
+ */
+export const timeline: TimelineEntry[] = [];
 
 export const values: BrandValue[] = [
   {
     index: "01",
-    title: "No drops, no scarcity",
+    title: "Faith first",
     description:
-      "Everything stays in stock. If we cannot keep a piece available, we stop making it rather than turning the shortage into marketing.",
+      "Every design begins with the message. If it does not point people toward hope, it does not get made.",
   },
   {
     index: "02",
-    title: "Printed by us",
+    title: "Limited by design",
     description:
-      "On our own press, in Atlanta. Not contracted out and re-labelled — which is the only reason we can make promises about how the print wears.",
+      "Collections drop in limited runs, so every piece stays considered and personal rather than mass-produced.",
   },
   {
     index: "03",
-    title: "Weight you can feel",
+    title: "Made personal",
     description:
-      "230 gsm 260 gsm 360 gsm, not the premium option. A light garment cannot survive being worn weekly and we would rather not sell one.",
+      "Custom design requests are open to anyone — individuals, churches, ministries and groups who want something that is truly theirs.",
   },
   {
     index: "04",
-    title: "A short range",
+    title: "Quality that lasts",
     description:
-      "Six pieces. A new one only exists because an old one could not do the job, never because the season turned over.",
+      "230 gsm, 260 gsm and 360 gsm fabrics, made to be worn often. A message only travels as far as the garment carrying it.",
   },
   {
     index: "05",
-    title: "Plain answers",
+    title: "From Ghana, for the world",
     description:
-      "We say what the fabric is, where it was made, how it fits and what will go first. Nobody has ever been disappointed by being told the truth early.",
+      "Rooted in Ghana and shipping worldwide, so faith-forward style can reach anyone, anywhere.",
   },
 ];
 
@@ -129,18 +84,18 @@ export const values: BrandValue[] = [
  * each number. Set the array to [] to hide the section entirely.
  */
 export const statistics: Statistic[] = [
-  { value: "7", label: "Years on the press", placeholder: true },
-  { value: "6", label: "Pieces in the range", placeholder: true },
-  { value: "40", label: "Shirts in the first run", placeholder: true },
-  { value: "22", label: "Countries shipped to", placeholder: true },
+  { value: "Ghana", label: "Where we are based" },
+  { value: "Worldwide", label: "Where we ship" },
+  { value: "Limited", label: "Ready-to-wear collections" },
+  { value: "Custom", label: "Design requests welcome" },
 ];
 
 /** Shown on the About page. Remove the export usage if the client declines. */
 export const founder: Founder = {
-  name: "Marcus Delaney",
+  name: "Felix Badmond",
   role: "Founder & head printer",
   biography: [
-    "Marcus spent six years as a press operator for other people's brands before deciding he would rather make forty of something he meant than forty thousand of something he did not.",
+    "Felix spent six years as a press operator for other people's brands before deciding he would rather make forty of something he meant than forty thousand of something he did not.",
     "He still pulls the first proof of every run, sets the ink by eye, and is the person who answers the sizing emails. The shop is his and there are five other people in it.",
   ],
   image: {
@@ -149,7 +104,7 @@ export const founder: Founder = {
     width: 1200,
     height: 1500,
   },
-  signature: "Marcus",
+  signature: "Felix",
 };
 
 /**
@@ -160,6 +115,6 @@ export const founder: Founder = {
 export const standards = [
   { label: "Fabric", value: "230 gsm 260 gsm 360 gsm" },
   { label: "Printed in", value: "Ghana" },
-  { label: "Restocks", value: "Always. No drops, no waitlists." },
+  { label: "Collections", value: "Limited drops, plus custom requests" },
   { label: "Packaging", value: "Paper and cotton. " },
 ];

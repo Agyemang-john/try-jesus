@@ -47,7 +47,7 @@ export function Story() {
                 />
               </div>
               <figcaption className="label mt-4 text-graphite">
-                Blanks waiting to go on the press
+                Every piece starts as a message
               </figcaption>
             </figure>
           </Reveal>

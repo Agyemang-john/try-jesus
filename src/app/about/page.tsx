@@ -18,23 +18,21 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "Try Jesus is a small Atlanta print shop making heavyweight apparel. The story, the history, the people and the standards behind the press.",
+    "Try Jesus is a faith and renewal clothing brand based in Ghana — limited ready-to-wear collections and custom designs, shipping faith-forward style worldwide.",
   path: "/about",
-  image: { src: "/images/brand/about-hero.jpg", alt: "The Try Jesus print shop in Atlanta" },
+  image: { src: "/images/brand/about-hero.jpg", alt: "Try Jesus faith and renewal clothing" },
 });
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow=""
+        eyebrow="About Try Jesus"
         title="Voice of the ONE"
-        lead="TRY JESUS is a faith and renewal clothing brand built on the idea that what you waer can carry a message. Every piece  is designed to start conversations, inspire
-        hope, and remind people to try faith first. We frop limited ready-to-waer collections and take custom design 
-        requests for anyone who wants something personal. Based in Ghana, shipping faith forward style worldwide."
+        lead="Try Jesus is a faith and renewal clothing brand built on the idea that what you wear can carry a message. Every piece is designed to start conversations, inspire hope, and remind people to try faith first."
         image={{
           src: "/images/brand/about-hero.jpg",
-          alt: "The Try Jesus print shop",
+          alt: "Try Jesus faith and renewal clothing",
           width: 2400,
           height: 1350,
         }}
@@ -53,7 +51,7 @@ export default function AboutPage() {
             <div className="lg:col-span-7">
               <Eyebrow rule>Next</Eyebrow>
               <p className="text-display-sm mt-8 max-w-2xl font-display">
-                The garments are the argument. Have a look at them.
+                Wear the message. Have a look at the collection.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4 lg:col-span-4 lg:col-start-9">

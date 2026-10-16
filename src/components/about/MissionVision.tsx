@@ -37,7 +37,7 @@ export function MissionVision() {
       <div className="relative aspect-3/2 w-full sm:aspect-21/9">
         <Image
           src="/images/brand/atelier.jpg"
-          alt="The Try Jesus shop in Atlanta"
+          alt="The Try Jesus studio in Ghana"
           fill
           sizes="100vw"
           loading="lazy"
