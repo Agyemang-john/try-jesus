@@ -262,7 +262,7 @@ const jobs = [];
  *   node scripts/_candidates.mjs "baseball cap" portrait sheet.jpg
  */
 const PINS = {
-  "hero/wear-it-plainly.jpg": "9775889", // four people in plain white tees
+  "hero/1.jpeg": "9775889", // four people in plain white tees
   "hero/wear-it-plainly-mobile.jpg": "11340657", // young man, grey hoodie, full length
   "products/cornerstone-cap-01.jpg": "7562957", // beige cap on a fence
   "products/cornerstone-cap-02.jpg": "18670550", // close-up, cap held up

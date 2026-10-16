@@ -32,7 +32,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Heavyweight cotton, water-based print, six pieces and no drops. We don't follow trends. We preach truth. the Gospel deserves excellence, not mediocrity",
     image: {
-      src: "/images/hero/wear-it-plainly.jpg",
+      src: "/images/hero/1.jpeg",
       alt: "Campaign photograph for the Try Jesus range",
       width: 2560,
       height: 1440,
